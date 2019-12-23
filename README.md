@@ -1,4 +1,4 @@
-## 💻 Alimsam-Client
+## 💻 Alimsam-Android
 
 [![Author](https://img.shields.io/badge/author-Im--Tae-red.svg)]( https://github.com/Im-Tae ) [![language](https://img.shields.io/badge/language-Kotlin-green
 )]( ) [![tools](https://img.shields.io/badge/tools-Android%20Studio%2C%20Abode%20XD-green)]() [![MIT License](https://img.shields.io/badge/license-MIT%20License-blue.svg)]( https://opensource.org/licenses/MIT )
