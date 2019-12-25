@@ -22,7 +22,7 @@
         <ImageView
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:background="@drawable/moving_button"
+            android:background="@drawable/button"
             android:src="@drawable/moving_button_image" />
 
         <TextView
@@ -39,6 +39,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/outing_button"
         android:orientation="vertical"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
@@ -48,7 +49,7 @@
         <ImageView
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:background="@drawable/moving_button"
+            android:background="@drawable/button"
             android:src="@drawable/outing_button_image" />
 
         <TextView

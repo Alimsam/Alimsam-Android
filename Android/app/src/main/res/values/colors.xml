@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
     <color name="mainColor">#d6d8f2</color>
+    <color name="checkActivityBackgroundColor">#ECF0F1</color>
 </resources>
