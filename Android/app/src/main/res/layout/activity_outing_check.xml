@@ -7,4 +7,6 @@
     tools:context=".ui.OutingCheckActivity"
     android:background="@color/checkActivityBackgroundColor">
 
+    <include layout="@layout/title_bar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

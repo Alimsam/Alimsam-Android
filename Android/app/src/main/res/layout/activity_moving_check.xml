@@ -7,4 +7,6 @@
     tools:context=".ui.MovingCheckActivity"
     android:background="@color/checkActivityBackgroundColor">
 
+    <include layout="@layout/title_bar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

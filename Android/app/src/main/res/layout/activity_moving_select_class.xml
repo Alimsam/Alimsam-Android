@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MovingSelectClassActivity"
-    android:background="@color/mainColor">
+    android:background="@color/mainColor"
+    >
+
+    <include layout="@layout/title_bar"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
