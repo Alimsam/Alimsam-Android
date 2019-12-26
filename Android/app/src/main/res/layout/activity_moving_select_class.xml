@@ -8,8 +8,193 @@
     android:background="@color/mainColor"
     >
 
-    <include layout="@layout/title_bar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/title_bar"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/moving_className"
+                android:text="1학년"
+                android:textSize="25dp"
+                android:gravity="center"
+                style="@style/mainText"
+                android:background="@color/white"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="170dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:background="@drawable/button_two"
+                android:id="@+id/moving_class_one"
+                android:layout_alignParentLeft="true"
+                >
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="1반"
+                    style="@style/mainText"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:background="@drawable/button_two"
+                android:id="@+id/moving_class_two"
+                android:layout_marginStart="180dp"
+                android:layout_marginRight="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="2반"
+                    style="@style/mainText"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="195dp"
+            >
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:background="@drawable/button_two"
+                android:id="@+id/moving_class_three"
+                android:layout_alignParentLeft="true"
+                >
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/classroom_three"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="3반"
+                    style="@style/mainText"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:background="@drawable/button_two"
+                android:id="@+id/moving_class_four"
+                android:layout_marginStart="180dp"
+                android:layout_marginRight="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="4반"
+                    style="@style/mainText"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

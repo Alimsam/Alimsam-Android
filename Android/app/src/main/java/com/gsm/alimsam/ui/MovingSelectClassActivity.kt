@@ -2,6 +2,7 @@ package com.gsm.alimsam.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import com.gsm.alimsam.R
 import kotlinx.android.synthetic.main.title_bar.*
 
