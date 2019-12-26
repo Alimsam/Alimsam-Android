@@ -4,7 +4,11 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import com.gsm.alimsam.R
+import com.gsm.alimsam.utils.DateUtil
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         moving_button.setOnClickListener { startActivity(Intent(this, MovingSelectClassActivity::class.java)) }
 
-        outing_button.setOnClickListener { startActivity(Intent(this, OutingSelectClassActivity::class.java)) }
+        outing_button.setOnClickListener { if (checkOutingDay()) startActivity(Intent(this, OutingSelectClassActivity::class.java)) }
+    }
+
+    fun checkOutingDay(): Boolean {
+        if (DateUtil.getDay() == "월" || DateUtil.getDay() == "수") return true
+        else Toasty.info(this, "외출일이 아닙니다.", Toast.LENGTH_SHORT, true).show()
+        return false
     }
 }
