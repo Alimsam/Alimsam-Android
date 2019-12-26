@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:id="@+id/outing_studentName"
+        android:text="학생 이름"
+        android:paddingEnd="40dp"
+        android:gravity="center"
+        style="@style/mainText"
+        android:textSize="20dp"
+        android:background="@drawable/outing_listview"
+        />
+
+    <TextView
+        style="@style/mainText"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/outing_check"
+        android:layout_alignEnd="@+id/outing_studentName"
+        android:background="@drawable/outing_listview"
+        android:gravity="center"
+        android:text="O"
+        android:textSize="35dp" />
+
+</RelativeLayout>
