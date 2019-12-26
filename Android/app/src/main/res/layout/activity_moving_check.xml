@@ -7,6 +7,51 @@
     tools:context=".ui.MovingCheckActivity"
     android:background="@color/checkActivityBackgroundColor">
 
-    <include layout="@layout/title_bar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/title_bar"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/moving_className"
+                android:text="1반"
+                android:textSize="25dp"
+                android:gravity="center"
+                style="@style/mainText"
+                android:background="@color/white"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/moving_gradeName"
+                android:text="1학년"
+                android:textSize="25dp"
+                android:gravity="center"
+                style="@style/mainText"
+                android:background="@color/white"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
