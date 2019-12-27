@@ -76,6 +76,7 @@
                     android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
+                    android:src="@drawable/moving_image_one"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -106,6 +107,7 @@
                     android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
+                    android:src="@drawable/moving_image_two"
                     />
                 <TextView
                     android:layout_width="match_parent"
@@ -176,6 +178,7 @@
                     android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
+                    android:src="@drawable/moving_image_four"
                     />
                 <TextView
                     android:layout_width="match_parent"

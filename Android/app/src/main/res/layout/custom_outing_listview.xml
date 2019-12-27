@@ -24,20 +24,20 @@ android:layout_height="80dp">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="3dp"
+    android:gravity="center"
     android:orientation="horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="나간 시간: "
         style="@style/mainText"
         android:textSize="15dp"
-        android:paddingLeft="15dp"
+        android:paddingStart="10dp"
         />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/outing_leftTime"
         android:text="나간 시간"
@@ -50,12 +50,14 @@ android:layout_height="80dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:text="들어온 시간: "
             style="@style/mainText"
             android:textSize="15dp"
@@ -63,9 +65,8 @@ android:layout_height="80dp">
             />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:id="@+id/outing_inTime"
             android:text="들어온 시간 "
             style="@style/mainText"
