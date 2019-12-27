@@ -1,31 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:background="@drawable/moving_listview"
+android:layout_marginBottom="20dp"
+android:layout_marginRight="70dp"
+android:layout_marginLeft="70dp"
+android:layout_height="80dp">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:id="@+id/outing_studentName"
+    android:text="학생 이름"
+    style="@style/mainText"
+    android:textSize="20dp"
     android:gravity="center"
-    android:paddingBottom="10dp"
-    android:layout_height="wrap_content">
+
+    />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:orientation="horizontal">
 
     <TextView
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:id="@+id/outing_studentName"
-        android:text="학생 이름"
-        android:paddingEnd="40dp"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="나간 시간: "
         style="@style/mainText"
-        android:textSize="20dp"
-        android:background="@drawable/outing_listview"
+        android:textSize="15dp"
+        android:paddingLeft="15dp"
         />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/outing_leftTime"
+        android:text="나간 시간"
         style="@style/mainText"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:id="@+id/outing_check"
-        android:layout_alignEnd="@+id/outing_studentName"
-        android:background="@drawable/outing_listview"
-        android:gravity="center"
-        android:text="O"
-        android:textSize="35dp" />
+        android:textSize="15dp"
+        android:paddingLeft="5dp"
+        />
 
-</RelativeLayout>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="들어온 시간: "
+            style="@style/mainText"
+            android:textSize="15dp"
+            android:paddingLeft="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:id="@+id/outing_inTime"
+            android:text="들어온 시간 "
+            style="@style/mainText"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

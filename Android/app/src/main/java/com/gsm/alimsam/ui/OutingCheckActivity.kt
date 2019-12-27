@@ -14,26 +14,26 @@ import kotlinx.android.synthetic.main.title_bar.*
 class OutingCheckActivity : AppCompatActivity() {
 
     private var outingList = arrayListOf<Outing>(
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "X"),
-        Outing("임태건", "O"),
-        Outing("임태건", "X"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "X"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "X"),
-        Outing("임태건", "O"),
-        Outing("임태건", "O"),
-        Outing("임태건", "X"),
-        Outing("임태건", "X"),
-        Outing("임태건", "O")
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분"),
+        Outing("임태건", "8시 29분", "9시 10분")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

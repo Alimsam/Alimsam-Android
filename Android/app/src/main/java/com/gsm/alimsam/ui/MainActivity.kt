@@ -20,12 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         moving_button.setOnClickListener { startActivity(Intent(this, MovingSelectClassActivity::class.java)) }
 
-        outing_button.setOnClickListener { if (checkOutingDay()) startActivity(Intent(this, OutingSelectClassActivity::class.java)) }
+        outing_button.setOnClickListener { /*if (checkOutingDay())*/ startActivity(Intent(this, OutingSelectClassActivity::class.java)) }
     }
 
+/*
     fun checkOutingDay(): Boolean {
         if (DateUtil.getDay() == "월" || DateUtil.getDay() == "수") return true
         else Toasty.info(this, "외출일이 아닙니다.", Toast.LENGTH_SHORT, true).show()
         return false
-    }
+    } */
 }

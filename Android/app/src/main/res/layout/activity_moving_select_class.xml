@@ -145,7 +145,7 @@
                     android:layout_height="110dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:src="@drawable/classroom_three"
+                    android:src="@drawable/moving_image_three"
                     />
                 <TextView
                     android:layout_width="match_parent"
