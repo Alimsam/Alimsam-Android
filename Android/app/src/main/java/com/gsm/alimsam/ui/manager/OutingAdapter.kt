@@ -22,13 +22,13 @@ class OutingAdapter(context: Context, private val outingList: ArrayList<Outing>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val outing = outingList[position]
         holder.outing_studentName?.text = outing.studentName
-        holder.outing_check?.text = outing.leftTime
-        holder.outing_inTime?.text = outing.inTime
+        holder.outing_check?.text = outing.outTime
+        holder.outing_inTime?.text = outing.backTime
     }
 
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         val outing_studentName = itemView?.findViewById<TextView?>(R.id.outing_studentName)
-        val outing_check = itemView?.findViewById<TextView?>(R.id.outing_leftTime)
-        val outing_inTime = itemView?.findViewById<TextView?>(R.id.outing_inTime)
+        val outing_check = itemView?.findViewById<TextView?>(R.id.outing_outTime)
+        val outing_inTime = itemView?.findViewById<TextView?>(R.id.outing_backTime)
     }
 }
