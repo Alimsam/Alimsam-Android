@@ -43,7 +43,7 @@ class MovingCheckActivity : AppCompatActivity() {
         setContentView(R.layout.activity_moving_check)
         init()
         getMovingInfo()
-        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
     }
 
     private fun getMovingInfo() {
@@ -59,5 +59,5 @@ class MovingCheckActivity : AppCompatActivity() {
         selectClassAndGradeButton.isVisible = false
     }
 
-    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 }

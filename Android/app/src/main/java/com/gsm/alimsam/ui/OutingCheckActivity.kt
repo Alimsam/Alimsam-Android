@@ -3,6 +3,7 @@ package com.gsm.alimsam.ui
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.isVisible
 import com.gsm.alimsam.R
 import com.gsm.alimsam.ui.manager.Moving
@@ -44,7 +45,7 @@ class OutingCheckActivity : AppCompatActivity() {
         setContentView(R.layout.activity_outing_check)
         init()
         getOutingInfo()
-        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
     }
 
     private fun getOutingInfo() {
@@ -60,5 +61,5 @@ class OutingCheckActivity : AppCompatActivity() {
         selectClassAndGradeButton.isVisible = false
     }
 
-    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 }

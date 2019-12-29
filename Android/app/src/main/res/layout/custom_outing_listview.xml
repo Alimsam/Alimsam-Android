@@ -39,7 +39,7 @@ android:layout_height="80dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/outing_leftTime"
+        android:id="@+id/outing_outTime"
         android:text="나간 시간"
         style="@style/mainText"
         android:textSize="15dp"
@@ -67,7 +67,7 @@ android:layout_height="80dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/outing_inTime"
+            android:id="@+id/outing_backTime"
             android:text="들어온 시간 "
             style="@style/mainText"
             android:textSize="15dp"

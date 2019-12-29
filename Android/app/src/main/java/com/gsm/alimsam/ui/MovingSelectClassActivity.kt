@@ -23,7 +23,7 @@ class MovingSelectClassActivity : AppCompatActivity() {
         setContentView(R.layout.activity_moving_select_class)
 
         titleName.text = "자습시간"
-        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
         selectClassAndGradeButton.setOnClickListener {
 
             val dialog = BottomSheetDialog(this)
@@ -31,21 +31,9 @@ class MovingSelectClassActivity : AppCompatActivity() {
             dialog.setContentView(bottomSheet)
             dialog.show()
 
-            dialog.grade_one.setOnClickListener {
-                moving_gradeName.text = "1학년"
-                DataSingleton.getInstance()?.studentGrade = "1"
-                dialog.dismiss()
-            }
-            dialog.grade_two.setOnClickListener {
-                moving_gradeName.text = "2학년"
-                DataSingleton.getInstance()?.studentGrade = "2"
-                dialog.dismiss()
-            }
-            dialog.grade_three.setOnClickListener {
-                moving_gradeName.text = "3학년"
-                DataSingleton.getInstance()?.studentGrade = "3"
-                dialog.cancel()
-            }
+            dialog.grade_one.setOnClickListener { moving_gradeName.text = "1학년"; dialog.dismiss() }
+            dialog.grade_two.setOnClickListener { moving_gradeName.text = "2학년"; dialog.dismiss() }
+            dialog.grade_three.setOnClickListener { moving_gradeName.text = "3학년"; dialog.cancel() }
         }
 
         moving_class_one.setOnClickListener(onClickListener)
@@ -59,15 +47,16 @@ class MovingSelectClassActivity : AppCompatActivity() {
     private val onClickListener = View.OnClickListener { view ->
 
         when(view.id) {
-            R.id.moving_class_one -> DataSingleton.getInstance()?.studentClass = "1"
-            R.id.moving_class_two -> DataSingleton.getInstance()?.studentClass = "2"
-            R.id.moving_class_three -> DataSingleton.getInstance()?.studentClass = "3"
-            R.id.moving_class_four -> DataSingleton.getInstance()?.studentClass = "4"
+            R.id.moving_class_one -> DataSingleton.getInstance()?.studentClass = "1반"
+            R.id.moving_class_two -> DataSingleton.getInstance()?.studentClass = "2반"
+            R.id.moving_class_three -> DataSingleton.getInstance()?.studentClass = "3반"
+            R.id.moving_class_four -> DataSingleton.getInstance()?.studentClass = "4반"
         }
 
+        DataSingleton.getInstance()?.studentGrade = moving_gradeName.text.toString()
         startActivity(Intent(this, MovingCheckActivity::class.java))
     }
 
-    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
+    override fun onBackPressed() { super.onBackPressed(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 
 }
