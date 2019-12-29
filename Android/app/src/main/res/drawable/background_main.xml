@@ -10,9 +10,9 @@
             <size android:height="30dp" />
         </shape>
     </item>
-    <item android:bottom="250dp">
+    <item
+        android:bottom="250dp">
         <shape android:shape="rectangle" >
-
             <gradient
                 android:startColor="#FFFFFF"
                 android:endColor="#FFFFFF"
