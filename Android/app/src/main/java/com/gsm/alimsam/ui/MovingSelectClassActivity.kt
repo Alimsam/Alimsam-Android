@@ -23,7 +23,7 @@ class MovingSelectClassActivity : AppCompatActivity() {
         setContentView(R.layout.activity_moving_select_class)
 
         titleName.text = "자습시간"
-        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation)  }
+        backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.no_animation) }
         selectClassAndGradeButton.setOnClickListener {
 
             val dialog = BottomSheetDialog(this)
@@ -32,17 +32,17 @@ class MovingSelectClassActivity : AppCompatActivity() {
             dialog.show()
 
             dialog.grade_one.setOnClickListener {
-                moving_gradeName.setText("1학년")
+                moving_gradeName.text = "1학년"
                 DataSingleton.getInstance()?.studentGrade = "1"
                 dialog.dismiss()
             }
             dialog.grade_two.setOnClickListener {
-                moving_gradeName.setText("2학년")
+                moving_gradeName.text = "2학년"
                 DataSingleton.getInstance()?.studentGrade = "2"
                 dialog.dismiss()
             }
             dialog.grade_three.setOnClickListener {
-                moving_gradeName.setText("3학년")
+                moving_gradeName.text = "3학년"
                 DataSingleton.getInstance()?.studentGrade = "3"
                 dialog.cancel()
             }
