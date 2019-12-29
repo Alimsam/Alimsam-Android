@@ -53,7 +53,7 @@ class MovingCheckActivity : AppCompatActivity() {
     }
 
     fun init() {
-        titleName.setText("이동현황")
+        titleName.text = "이동현황"
         moving_gradeName.text = DataSingleton.getInstance()?.studentGrade
         moving_className.text = DataSingleton.getInstance()?.studentClass
         selectClassAndGradeButton.isVisible = false

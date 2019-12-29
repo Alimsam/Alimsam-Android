@@ -54,7 +54,7 @@ class OutingCheckActivity : AppCompatActivity() {
     }
 
     fun init() {
-        titleName.setText("외출현황")
+        titleName.text = "외출현황"
         outing_gradeName.text = DataSingleton.getInstance()?.studentGrade
         outing_className.text = DataSingleton.getInstance()?.studentClass
         selectClassAndGradeButton.isVisible = false
