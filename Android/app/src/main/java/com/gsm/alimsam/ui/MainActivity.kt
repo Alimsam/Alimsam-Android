@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_out, R.anim.no_animation)
         setContentView(R.layout.activity_main)
 
+        for (i in 1..10) {
+            Log.d("debug", DateUtil.getYesterday())
+        }
+
         moving_button.setOnClickListener { startActivity(Intent(this, MovingSelectClassActivity::class.java)) }
 
         outing_button.setOnClickListener { /*if (checkOutingDay())*/ startActivity(Intent(this, OutingSelectClassActivity::class.java)) }
