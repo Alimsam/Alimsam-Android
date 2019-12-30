@@ -1,4 +1,4 @@
-package com.gsm.alimsam.ui.manager
+package com.gsm.alimsam.manager
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -21,8 +21,8 @@ class MovingAdapter(context: Context, private val movingList: ArrayList<Moving>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val moving = movingList[position]
-        holder.moving_studentName?.text = moving.studentName
-        holder.moving_studentLocation?.text = moving.studentLocation
+        holder.moving_studentName?.text = moving.name
+        holder.moving_studentLocation?.text = moving.place
     }
 
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {

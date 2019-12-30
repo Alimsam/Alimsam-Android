@@ -13,6 +13,7 @@ class DateUtil {
         private var calendar = Calendar.getInstance()
         private var day = calendar.get(Calendar.DAY_OF_WEEK)
 
+        // 함수 호출마다 -1 되는 경우 수정해야됨
         fun getYesterday(): String {
             calendar.add(Calendar.DATE, -1)
             return formatter.format(calendar.time)

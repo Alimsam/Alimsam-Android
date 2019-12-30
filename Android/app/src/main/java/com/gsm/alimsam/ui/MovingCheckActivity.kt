@@ -5,36 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
 import com.gsm.alimsam.R
-import com.gsm.alimsam.ui.manager.Moving
-import com.gsm.alimsam.ui.manager.MovingAdapter
+import com.gsm.alimsam.manager.Moving
+import com.gsm.alimsam.manager.MovingAdapter
+import com.gsm.alimsam.manager.Retrofit
 import com.gsm.alimsam.utils.DataSingleton
+import com.gsm.alimsam.utils.DateUtil
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_moving_check.*
 import kotlinx.android.synthetic.main.title_bar.*
 
 class MovingCheckActivity : AppCompatActivity() {
 
-    private var movingList = arrayListOf<Moving>(
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반"),
-        Moving("임태건", "2-4반")
-    )
+    private val retrofit by lazy { Retrofit.create() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,13 +25,18 @@ class MovingCheckActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_out, R.anim.no_animation)
         setContentView(R.layout.activity_moving_check)
         init()
-        getMovingInfo()
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
+
+        retrofit.getMovingData(DateUtil.getYesterday(),DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
+            .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+            .subscribe({
+                setRecyclerView(it)
+            }, {})
     }
 
-    private fun getMovingInfo() {
+    private fun setRecyclerView(it: ArrayList<Moving>?) {
         moving_listview.adapter?.notifyDataSetChanged()
-        val movingAdapter = MovingAdapter(this, movingList)
+        val movingAdapter = MovingAdapter(this, it!!)
         moving_listview.adapter = movingAdapter
     }
 

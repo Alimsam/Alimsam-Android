@@ -6,37 +6,19 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.view.isVisible
 import com.gsm.alimsam.R
-import com.gsm.alimsam.ui.manager.Moving
-import com.gsm.alimsam.ui.manager.Outing
-import com.gsm.alimsam.ui.manager.OutingAdapter
+import com.gsm.alimsam.manager.Outing
+import com.gsm.alimsam.manager.OutingAdapter
+import com.gsm.alimsam.manager.Retrofit
 import com.gsm.alimsam.utils.DataSingleton
+import com.gsm.alimsam.utils.DateUtil
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_outing_check.*
 import kotlinx.android.synthetic.main.title_bar.*
 
 class OutingCheckActivity : AppCompatActivity() {
 
-    private var outingList = arrayListOf<Outing>(
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분"),
-        Outing("임태건", "8시 29분", "9시 10분")
-    )
+    private val retrofit by lazy { Retrofit.create() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +26,19 @@ class OutingCheckActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_out, R.anim.no_animation)
         setContentView(R.layout.activity_outing_check)
         init()
-        getOutingInfo()
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
+
+        retrofit.getOutingData(DateUtil.getYesterday(),DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
+            .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+            .subscribe({
+                setRecyclerView(it)
+            }, {})
+
     }
 
-    private fun getOutingInfo() {
+    private fun setRecyclerView(it: ArrayList<Outing>?) {
         outing_listview.adapter?.notifyDataSetChanged()
-        val movingAdapter = OutingAdapter(this, outingList)
+        val movingAdapter = OutingAdapter(this, it!!)
         outing_listview.adapter = movingAdapter
     }
 
