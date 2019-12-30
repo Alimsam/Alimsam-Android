@@ -28,7 +28,7 @@ class OutingCheckActivity : AppCompatActivity() {
         init()
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 
-        retrofit.getOutingData(DateUtil.getYesterday(),DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
+        retrofit.getOutingData(DateUtil.getToday(),DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
             .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
             .subscribe({
                 setRecyclerView(it)

@@ -29,8 +29,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:id="@+id/outing_className"
-                android:text="1반"
+                android:id="@+id/outing_gradeName"
+                android:text="학년"
                 android:textSize="25dp"
                 android:gravity="center"
                 style="@style/mainText"
@@ -41,8 +41,8 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:id="@+id/outing_gradeName"
-                android:text="1학년"
+                android:id="@+id/outing_className"
+                android:text="반"
                 android:textSize="25dp"
                 android:gravity="center"
                 style="@style/mainText"
