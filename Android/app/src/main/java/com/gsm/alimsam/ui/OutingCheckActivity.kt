@@ -42,7 +42,7 @@ class OutingCheckActivity : AppCompatActivity() {
         outing_listview.adapter = movingAdapter
     }
 
-    fun init() {
+    private fun init() {
         titleName.text = "외출현황"
         outing_gradeName.text = DataSingleton.getInstance()?.studentGrade
         outing_className.text = DataSingleton.getInstance()?.studentClass

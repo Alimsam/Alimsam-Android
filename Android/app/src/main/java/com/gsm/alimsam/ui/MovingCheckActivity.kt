@@ -40,7 +40,7 @@ class MovingCheckActivity : AppCompatActivity() {
         moving_listview.adapter = movingAdapter
     }
 
-    fun init() {
+    private fun init() {
         titleName.text = "이동현황"
         moving_gradeName.text = DataSingleton.getInstance()?.studentGrade
         moving_className.text = DataSingleton.getInstance()?.studentClass

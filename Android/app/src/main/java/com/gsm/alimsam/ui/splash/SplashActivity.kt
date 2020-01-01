@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         splash.start()
     }
 
-    fun openMainActivity() {
+    private fun openMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
