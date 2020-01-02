@@ -11,7 +11,7 @@ class Retrofit {
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl("http://10.120.73.120:3000/").build()
+                .baseUrl("http://54.180.88.152:3000/").build()
 
             return retrofit.create(RetrofitHelper::class.java)
         }
