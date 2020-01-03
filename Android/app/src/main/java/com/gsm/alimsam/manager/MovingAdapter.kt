@@ -21,6 +21,7 @@ class MovingAdapter(context: Context, private val movingList: ArrayList<Moving>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val moving = movingList[position]
+        holder.moving_studentId?.text = moving.studentId
         holder.moving_studentName?.text = moving.name
         holder.moving_studentLocation?.text = moving.place
     }
@@ -28,6 +29,7 @@ class MovingAdapter(context: Context, private val movingList: ArrayList<Moving>)
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         val moving_studentName = itemView?.findViewById<TextView?>(R.id.moving_studentName)
         val moving_studentLocation = itemView?.findViewById<TextView?>(R.id.moving_studentLocation)
+        val moving_studentId = itemView?.findViewById<TextView?>(R.id.moving_studentId)
     }
 
 }

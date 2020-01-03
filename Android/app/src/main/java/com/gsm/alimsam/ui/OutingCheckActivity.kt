@@ -33,13 +33,12 @@ class OutingCheckActivity : AppCompatActivity() {
             .subscribe({
                 setRecyclerView(it)
             }, {})
-
     }
 
     private fun setRecyclerView(it: ArrayList<Outing>?) {
         outing_listview.adapter?.notifyDataSetChanged()
-        val movingAdapter = OutingAdapter(this, it!!)
-        outing_listview.adapter = movingAdapter
+        val outingAdapter = OutingAdapter(this, it!!)
+        outing_listview.adapter = outingAdapter
     }
 
     private fun init() {

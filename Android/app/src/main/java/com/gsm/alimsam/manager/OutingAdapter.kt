@@ -21,6 +21,7 @@ class OutingAdapter(context: Context, private val outingList: ArrayList<Outing>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val outing = outingList[position]
+        holder.outing_studentId?.text = outing.studentId
         holder.outing_studentName?.text = outing.name
         holder.outing_check?.text = outing.outTime
         holder.outing_inTime?.text = outing.backTime
@@ -30,5 +31,6 @@ class OutingAdapter(context: Context, private val outingList: ArrayList<Outing>)
         val outing_studentName = itemView?.findViewById<TextView?>(R.id.outing_studentName)
         val outing_check = itemView?.findViewById<TextView?>(R.id.outing_outTime)
         val outing_inTime = itemView?.findViewById<TextView?>(R.id.outing_backTime)
+        val outing_studentId = itemView?.findViewById<TextView?>(R.id.outing_studentId)
     }
 }
