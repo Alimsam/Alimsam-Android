@@ -25,6 +25,7 @@ class DateUtil {
             val calendar = Calendar.getInstance()
             calendar.set(year, month, dayOfMonth)
             DataSingleton.getInstance()?.getDate = formatter.format(calendar.time)
+            DataSingleton.getInstance()?.getDateForcalendarView = calendar.timeInMillis
         }
 
         fun getDay(): String {

@@ -5,6 +5,7 @@ class DataSingleton {
     var studentGrade: String? = null
     var studentClass: String? = null
     var getDate: String? = DateUtil.getToday()
+    var getDateForcalendarView: Long? = null
 
     companion object {
         private var instance: DataSingleton? = null

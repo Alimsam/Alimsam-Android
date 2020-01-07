@@ -45,6 +45,8 @@ class OutingSelectClassActivity : AppCompatActivity() {
             val bottomSheet = layoutInflater.inflate(R.layout.select_calendar_dialog, null)
             dialog.setContentView(bottomSheet)
             dialog.show()
+
+            if (DataSingleton.getInstance()?.getDateForcalendarView != null) dialog.calendarView.date = DataSingleton.getInstance()?.getDateForcalendarView!!
             
             dialog.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth -> DateUtil.getSelectDate(year, month, dayOfMonth); dialog.dismiss() }
             

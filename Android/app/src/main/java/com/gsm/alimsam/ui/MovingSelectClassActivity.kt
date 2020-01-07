@@ -46,7 +46,9 @@ class MovingSelectClassActivity : AppCompatActivity() {
             dialog.setContentView(bottomSheet)
             dialog.show()
 
-            dialog.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth -> DateUtil.getSelectDate(year, month, dayOfMonth); dialog.dismiss() }
+            if (DataSingleton.getInstance()?.getDateForcalendarView != null) dialog.calendarView.date = DataSingleton.getInstance()?.getDateForcalendarView!!
+
+            dialog.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth -> DateUtil.getSelectDate(year, month, dayOfMonth); dialog.dismiss(); }
         }
 
         moving_class_one.setOnClickListener(onClickListener)
