@@ -4,6 +4,7 @@ class DataSingleton {
 
     var studentGrade: String? = null
     var studentClass: String? = null
+    var getDate: String? = DateUtil.getToday()
 
     companion object {
         private var instance: DataSingleton? = null

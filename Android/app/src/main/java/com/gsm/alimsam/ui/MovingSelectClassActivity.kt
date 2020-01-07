@@ -9,7 +9,9 @@ import android.view.View
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.gsm.alimsam.R
 import com.gsm.alimsam.utils.DataSingleton
+import com.gsm.alimsam.utils.DateUtil
 import kotlinx.android.synthetic.main.activity_moving_select_class.*
+import kotlinx.android.synthetic.main.select_calendar_dialog.*
 import kotlinx.android.synthetic.main.select_grade_dialog.*
 import kotlinx.android.synthetic.main.title_bar.*
 
@@ -24,6 +26,7 @@ class MovingSelectClassActivity : AppCompatActivity() {
 
         titleName.text = "자습시간"
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
+
         selectClassAndGradeButton.setOnClickListener {
 
             val dialog = BottomSheetDialog(this)
@@ -33,7 +36,17 @@ class MovingSelectClassActivity : AppCompatActivity() {
 
             dialog.grade_one.setOnClickListener { moving_gradeName.text = "1학년"; dialog.dismiss() }
             dialog.grade_two.setOnClickListener { moving_gradeName.text = "2학년"; dialog.dismiss() }
-            dialog.grade_three.setOnClickListener { moving_gradeName.text = "3학년"; dialog.cancel() }
+            dialog.grade_three.setOnClickListener { moving_gradeName.text = "3학년"; dialog.dismiss() }
+        }
+
+        moving_calendar.setOnClickListener {
+
+            val dialog = BottomSheetDialog(this)
+            val bottomSheet = layoutInflater.inflate(R.layout.select_calendar_dialog, null)
+            dialog.setContentView(bottomSheet)
+            dialog.show()
+
+            dialog.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth -> DateUtil.getSelectDate(year, month, dayOfMonth); dialog.dismiss() }
         }
 
         moving_class_one.setOnClickListener(onClickListener)

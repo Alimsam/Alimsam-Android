@@ -21,6 +21,12 @@ class DateUtil {
 
         fun getToday(): String = formatter.format(calendar.time)
 
+        fun getSelectDate(year: Int, month: Int, dayOfMonth: Int) {
+            val calendar = Calendar.getInstance()
+            calendar.set(year, month, dayOfMonth)
+            DataSingleton.getInstance()?.getDate = formatter.format(calendar.time)
+        }
+
         fun getDay(): String {
             return when (day) {
                 0 -> "토"
