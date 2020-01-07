@@ -20,4 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep com.gsm.alimsam.**
+-keep class com.gsm.alimsam.**
+
+-keep interface com.gsm.alimsam.**
