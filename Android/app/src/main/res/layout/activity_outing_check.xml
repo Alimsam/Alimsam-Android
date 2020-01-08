@@ -60,6 +60,12 @@
         android:paddingTop="125dp"
         >
 
+        <com.baoyz.widget.PullRefreshLayout
+            android:id="@+id/outing_swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:refreshType="ring">
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,6 +73,8 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:id="@+id/outing_listview"
             />
+
+        </com.baoyz.widget.PullRefreshLayout>
 
     </LinearLayout>
 

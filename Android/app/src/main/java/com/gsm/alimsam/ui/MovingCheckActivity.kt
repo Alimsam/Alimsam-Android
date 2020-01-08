@@ -25,8 +25,17 @@ class MovingCheckActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_out, R.anim.no_animation)
         setContentView(R.layout.activity_moving_check)
         init()
+        getData()
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 
+        moving_swipeRefreshLayout.setOnRefreshListener {
+            moving_swipeRefreshLayout.postDelayed({ moving_swipeRefreshLayout.setRefreshing(false) }, 500)
+            getData()
+        }
+        
+    }
+
+    private fun getData() {
         retrofit.getMovingData(DateUtil.getToday(),DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
             .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
             .subscribe({

@@ -10,7 +10,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.gsm.alimsam.R
 import com.gsm.alimsam.utils.DataSingleton
 import com.gsm.alimsam.utils.DateUtil
+import kotlinx.android.synthetic.main.activity_outing_check.*
 import kotlinx.android.synthetic.main.activity_outing_select_class.*
+import kotlinx.android.synthetic.main.activity_outing_select_class.outing_gradeName
 import kotlinx.android.synthetic.main.select_calendar_dialog.*
 import kotlinx.android.synthetic.main.select_grade_dialog.*
 import kotlinx.android.synthetic.main.title_bar.*
@@ -47,7 +49,7 @@ class OutingSelectClassActivity : AppCompatActivity() {
             dialog.show()
 
             if (DataSingleton.getInstance()?.getDateForcalendarView != null) dialog.calendarView.date = DataSingleton.getInstance()?.getDateForcalendarView!!
-            
+
             dialog.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth -> DateUtil.getSelectDate(year, month, dayOfMonth); dialog.dismiss() }
             
         }

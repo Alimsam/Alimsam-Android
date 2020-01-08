@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.view.isVisible
+import com.baoyz.widget.PullRefreshLayout
 import com.gsm.alimsam.R
 import com.gsm.alimsam.manager.Outing
 import com.gsm.alimsam.manager.OutingAdapter
@@ -15,6 +16,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_outing_check.*
 import kotlinx.android.synthetic.main.title_bar.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class OutingCheckActivity : AppCompatActivity() {
 
@@ -26,8 +29,17 @@ class OutingCheckActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_out, R.anim.no_animation)
         setContentView(R.layout.activity_outing_check)
         init()
+        getData()
         backButton.setOnClickListener { finish(); overridePendingTransition(R.anim.fade_out, R.anim.fade_in) }
 
+        outing_swipeRefreshLayout.setOnRefreshListener {
+            outing_swipeRefreshLayout.postDelayed({ outing_swipeRefreshLayout.setRefreshing(false) }, 500)
+            getData()
+        }
+
+    }
+
+    private fun getData() {
         retrofit.getOutingData(DataSingleton.getInstance()?.getDate!!,DataSingleton.getStudentGradeForRetrofit() + DataSingleton.getStucentClassForRetrofit())
             .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
             .subscribe({
